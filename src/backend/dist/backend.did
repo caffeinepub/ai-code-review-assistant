@@ -1,0 +1,37 @@
+type TransformArgs = 
+ record {
+   context: blob;
+   response: HttpRequestResult;
+ };
+type HttpRequestResult = 
+ record {
+   body: blob;
+   headers: vec HttpHeader;
+   status: nat;
+ };
+type HttpHeader = 
+ record {
+   name: text;
+   value: text;
+ };
+type CodeReview = 
+ record {
+   bestPractices: vec text;
+   bugs: vec Bug;
+   explanation: text;
+   improvements: vec text;
+   qualityScore: nat;
+ };
+type Bug = 
+ record {
+   message: text;
+   severity: text;
+ };
+service : {
+  analyzeCode: (code: text, language: text) ->
+   (variant {
+      err: text;
+      ok: CodeReview;
+    });
+  transform: (input: TransformArgs) -> (HttpRequestResult) query;
+}

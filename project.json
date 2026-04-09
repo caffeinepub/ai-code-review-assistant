@@ -1,0 +1,23 @@
+{
+  "overview": "AI Code Review Assistant — a full-stack web app that lets users paste code in any programming language and receive instant AI-powered feedback including bug detection, improvement suggestions, code explanations, best practices recommendations, and a quality score. Designed for professional demos and academic presentations.",
+  "features": [
+    "Syntax-highlighted code editor with 15+ language support",
+    "AI-powered analysis via HTTP outcalls (bug detection, improvements, explanation, best practices)",
+    "Code quality score with color-coded visual indicator",
+    "Categorized, collapsible results panel",
+    "Sample code examples for quick testing",
+    "Dark/light theme toggle with localStorage persistence",
+    "Mobile-responsive layout",
+    "Copy-to-clipboard and keyboard shortcuts (Ctrl+Enter)"
+  ],
+  "category": "productivity",
+  "tags": [
+    "ai",
+    "code-review",
+    "developer-tools",
+    "productivity",
+    "education",
+    "demo"
+  ],
+  "last_updated": "2026-04-08T14:22:07.907Z"
+}

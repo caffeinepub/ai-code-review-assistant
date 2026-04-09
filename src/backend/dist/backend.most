@@ -1,0 +1,29 @@
+// Version: 1.0.0
+type HttpHeader__798751186 = {name : Text; value : Text};
+type HttpRequestResult__627046768 =
+  {body : Blob; headers : [HttpHeader__798751186]; status : Nat};
+type TransformArgs__722981045 =
+  {context : Blob; response : HttpRequestResult__627046768};
+actor {
+  stable GEMINI_API_KEY : Text;
+  stable ic :
+    actor {
+      http_request :
+        shared {
+                 body : ?Blob;
+                 headers : [HttpHeader__798751186];
+                 is_replicated : ?Bool;
+                 max_response_bytes : ?Nat64;
+                 method : {#get; #head; #post};
+                 transform :
+                   ?{
+                      context : Blob;
+                      function :
+                        shared query TransformArgs__722981045 ->
+                          async HttpRequestResult__627046768
+                    };
+                 url : Text
+               } ->
+          async HttpRequestResult__627046768
+    }
+};
